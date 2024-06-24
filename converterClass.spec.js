@@ -95,8 +95,4 @@ describe('Converter', () => {
       expect(console.log).toHaveBeenCalledWith(result);
     });
   });
-
-  it('bad test', () => {
-    expect('string').toBe(typeof number);
-  })
 });
