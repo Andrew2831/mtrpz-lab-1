@@ -1,4 +1,4 @@
-# MTRPZ LAB 1
+# MTRPZ LAB 2
 Program on JavaScript which converts markdown syntax to html using command line interface.
 
 ## Usage
