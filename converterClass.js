@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import { CannotReadFileException } from './cannotReadFileExceptions.js';
-import { WrongSyntaxException } from './wrongSyntaxException.js';
+import { WrongSytaxException } from './wrondSyntaxException.js';
 import { handleErrorSync } from '@stlib/utils';
 
 export class Converter {
@@ -45,9 +45,9 @@ export class Converter {
     const lines = data.split('\n');
     for (const line of lines) {
       if (line.startsWith('_') && !line.endsWith('_') && !line.startsWith('_ ')) {
-        throw new WrongSyntaxException(line);
+        throw new WrongSytaxException(line);
       } else if (/\*\*`_([^`]+?)_`\*\*/.test(line)) {
-        throw new WrongSyntaxException(line);
+        throw new WrongSytaxException(line);
       }
     }
   }
