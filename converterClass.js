@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import { CannotReadFileException } from './cannotReadFileExceptions.js';
 import { WrongSytaxException } from './wrondSyntaxException.js';
-import { handleErrorSync } from '@stlib/utils';
+import { handleErrorSync, options } from '@stlib/utils';
 
 export class Converter {
   constructor(inputFile, outputFile) {
@@ -82,7 +82,10 @@ export class Converter {
   outputResult(result) {
     if (this.htmlFile) {
       fs.writeFileSync(this.htmlFile, result);
-    } else {
+    } else if(options.format === 'formatted') {
+      console.log('\x1b[7m%s\x1b[0m', result);
+    }
+    else {
       console.log(result);
     }
   }
